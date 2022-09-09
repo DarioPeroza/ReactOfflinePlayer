@@ -1,19 +1,24 @@
+*{
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 1s;
+}
 .App {
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
+  flex-direction: row-reverse;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: #121212;
 }
 
 .playerContainer{
   height: 100%;
+  width: calc(100% - 160px);
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #000;
 }
 
 .playerContainer img{
@@ -22,46 +27,81 @@
 }
 
 .mediaContainer{
-  height: 10vh;
-  width: 100%;
+  height: 100vh;
+  width: 160px;
+  display: flex;
+  flex-direction: row;
+}
+
+.mediaControls{
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: #080808;
 }
 
 .mediaContainer ul{
   width: 100%;
   height: 100%;
+  overflow: auto;
   margin: 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   margin-block-start: 0;
   margin-block-end: 0;
   padding-inline-start: 0;
+  background: #101010;
+}
+
+.mediaContainer ul::-webkit-scrollbar{
+  width: 6px;
+  background: #000;
+}
+
+.mediaContainer ul::-webkit-scrollbar-thumb{
+  background: #808080;
+  height: 120px;
 }
 
 .mediaContainer ul li{
-  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.mediaContainer ul li:hover{
+  transform: scale(.8);
 }
 
 .mediaContainer ul li img{
-  height: 100%;
+  width: 100%;
 }
 
-.addMediaButton{
-  height: 10vh;
-  width: 10vh;
-  font-size: 40pt;
-  color: #808080;
+.mediaButton{
+  height: 50px;
+  width: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 4px solid #808080;
+  border: 0;
+  color: #FFF;
   background-color: #ffffff00;
+  cursor: pointer;
 }
 
-.addMediaButton:hover{
-  color: #FFF;
+.activeMediaButton{
   border: 4px solid #FFF;
+}
+
+.mediaButton:hover{
+  background-color: #FFF;
+  color: #101010;
 }
 
 #mediaUpload{
@@ -72,23 +112,70 @@
   list-style: none;
 }
 
-/*
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.displayNone{
+  display: none;
 }
 
-.App-link {
-  color: #61dafb;
+#xButton{
+  background-image: url('../public/iconos/White-X.png');
+  background-size: contain;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#xButton:hover{
+  background-image: url('../public/iconos/Black-X.png');
 }
-*/
+#showButton{
+  background-image: url('../public/iconos/White-Eye.png');
+  background-size: contain;
+}
+#showButton:hover{
+  background-image: url('../public/iconos/Black-Eye.png');
+}
+#playButton{
+  background-image: url('../public/iconos/White-Play.png');
+  background-size: contain;
+}
+#playButton:hover{
+  background-image: url('../public/iconos/Black-Play.png');
+}
+#pauseButton{
+  background-image: url('../public/iconos/White-Pause.png');
+  background-size: contain;
+}
+#pauseButton:hover{
+  background-image: url('../public/iconos/Black-Pause.png');
+}
+#muteButton{
+  background-image: url('../public/iconos/White-Mute.png');
+  background-size: contain;
+}
+#muteButton:hover{
+  background-image: url('../public/iconos/Black-Mute.png');
+}
+#volumeButton{
+  background-image: url('../public/iconos/White-Volume.png');
+  background-size: contain;
+}
+#volumeButton:hover{
+  background-image: url('../public/iconos/Black-Volume.png');
+}
+#fullscreenButton{
+  background-image: url('../public/iconos/White-Fullscreen.png');
+  background-size: contain;
+}
+#fullscreenButton:hover{
+  background-image: url('../public/iconos/Black-Fullscreen.png');
+}
+#subtractButton{
+  background-image: url('../public/iconos/White-Subtract.png');
+  background-size: contain;
+}
+#subtractButton:hover{
+  background-image: url('../public/iconos/Black-Subtract.png');
+}
+#addButton{
+  background-image: url('../public/iconos/White-Add.png');
+  background-size: contain;
+}
+#addButton:hover{
+  background-image: url('../public/iconos/Black-Add.png');
+}
