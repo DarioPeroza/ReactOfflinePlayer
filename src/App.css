@@ -145,18 +145,18 @@
   background-image: url('../public/iconos/Black-Pause.png');
 }
 #muteButton{
-  background-image: url('../public/iconos/White-Mute.png');
-  background-size: contain;
-}
-#muteButton:hover{
-  background-image: url('../public/iconos/Black-Mute.png');
-}
-#volumeButton{
   background-image: url('../public/iconos/White-Volume.png');
   background-size: contain;
 }
-#volumeButton:hover{
+#muteButton:hover{
   background-image: url('../public/iconos/Black-Volume.png');
+}
+#volumeButton{
+  background-image: url('../public/iconos/White-Mute.png');
+  background-size: contain;
+}
+#volumeButton:hover{
+  background-image: url('../public/iconos/Black-Mute.png');
 }
 #fullscreenButton{
   background-image: url('../public/iconos/White-Fullscreen.png');
